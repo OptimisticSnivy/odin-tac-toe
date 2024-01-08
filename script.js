@@ -1,10 +1,14 @@
 function gameBoard() {
 	return {
-		marr: [[-1,-1,-1],[-1,-1,-1],[-1,-1,-1]],
-		setCross(i,j){
+		marr: [
+			[-1, -1, -1],
+			[-1, -1, -1],
+			[-1, -1, -1],
+		],
+		setCross(i, j) {
 			this.marr[i][j] = 1;
 		},
-		setMark(i,j){
+		setMark(i, j) {
 			this.marr[i][j] = 0;
 		},
 		getGame(i) {
@@ -14,13 +18,6 @@ function gameBoard() {
 }
 
 let game = gameBoard();
-game.setMark(0,0);
-game.setMark(0,1);
-game.setMark(0,2);
-console.log(game.getGame(0));
-console.log(game.getGame(1));
-console.log(game.getGame(2));
-
 // User Interface
 let delegate = document.querySelector(".delegate");
 let gridContainer = document.createElement("div");
@@ -40,8 +37,22 @@ for (let i = 0; i < n; i++) {
 	delegate.appendChild(gridContainer.cloneNode(true));
 }
 
-let btn = document.querySelector(".gridContainer");
-console.log(btn);
-btn.addEventListener("click",function(){
-	console.log("Set Cross/Mark!");
+let setPiece = document.body.querySelector(".delegate");
+setPiece.addEventListener("click", function(event) {
+	if (event.target.classList.contains("grid")) {
+		if (flag % 2 == 0) {
+			flag += 1;
+			event.target.style.backgroundColor = "red";
+			console.log(this);
+		} else {
+			flag += 1;
+			event.target.style.backgroundColor = "gold";
+			console.log(this);
+		}
+	}
 });
+let flag = 0;
+
+console.log(game.getGame(0));
+console.log(game.getGame(1));
+console.log(game.getGame(2));
