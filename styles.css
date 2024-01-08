@@ -11,7 +11,7 @@ body {
   margin-left: 10px;
 }
 
-.gridContainer {
+.grid-container {
   margin-left: 10px;
   display: flex;
   flex-direction: row;
@@ -23,13 +23,15 @@ body {
 /*     width: 300px; */
 /* } */
 
-.grid {
+.grid-cell{
   height: 30px;
   width: 30px;
   border-radius: 5px;
   margin-left: 10px;
   margin-top: 10px;
   background-color: paleturquoise;
+  color: paleturquoise;
+	
 }
 
 button {
