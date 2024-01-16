@@ -1,13 +1,15 @@
 body {
-  background-color: #1f2937;
+  background-color: #484848;
 }
 
 .container {
-  color: paleturquoise;
+  color: black;
   display: flex;
+  -webkit-text-stroke: 1.5px gold;
   font-size: 100px;
   font-family: "Iosevka", Lato, sans-serif;
   flex-direction: row;
   margin-left: 10px;
   justify-content: center;
+  text-shadow: 2px 2px gold;
 }
